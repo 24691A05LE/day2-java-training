@@ -12,4 +12,494 @@ control statements
       nested if
       switch
 
-      
+      # Java Control Flow Statements
+
+## 1. Introduction
+
+Control Flow Statements in Java are used to control the order in which statements are executed in a program.
+
+Normally, Java executes statements from top to bottom. Control flow statements change this execution based on conditions, repetitions, or jumps.
+
+### Types of Control Flow Statements
+
+1. Decision-Making Statements
+2. Looping Statements
+3. Jump Statements
+
+---
+
+# 2. Decision-Making Statements
+
+Decision-making statements execute different blocks of code based on conditions.
+
+There are five commonly used forms:
+
+## 2.1 if Statement
+
+The `if` statement executes a block of code only when the condition is true.
+
+### Syntax
+
+```java
+if (condition) {
+    // Statements
+}
+```
+
+### Example
+
+```java
+class Main {
+    public static void main(String[] args) {
+        int age = 20;
+
+        if (age >= 18) {
+            System.out.println("Eligible to vote");
+        }
+    }
+}
+```
+
+**Output:**
+```text
+Eligible to vote
+```
+
+## 2.2 if-else Statement
+
+The `if-else` statement executes one block when the condition is true and another block when it is false.
+
+### Syntax
+
+```java
+if (condition) {
+    // Executes if condition is true
+} else {
+    // Executes if condition is false
+}
+```
+
+### Example
+
+```java
+class Main {
+    public static void main(String[] args) {
+        int number = 7;
+
+        if (number % 2 == 0) {
+            System.out.println("Even Number");
+        } else {
+            System.out.println("Odd Number");
+        }
+    }
+}
+```
+
+**Output:**
+```text
+Odd Number
+```
+
+## 2.3 else-if Ladder
+
+The `else-if` ladder is used to check multiple conditions one by one.
+
+### Syntax
+
+```java
+if (condition1) {
+    // Statements
+} else if (condition2) {
+    // Statements
+} else if (condition3) {
+    // Statements
+} else {
+    // Default statements
+}
+```
+
+### Example
+
+```java
+class Main {
+    public static void main(String[] args) {
+        int marks = 85;
+
+        if (marks >= 90) {
+            System.out.println("Grade A");
+        } else if (marks >= 75) {
+            System.out.println("Grade B");
+        } else if (marks >= 50) {
+            System.out.println("Grade C");
+        } else {
+            System.out.println("Fail");
+        }
+    }
+}
+```
+
+**Output:**
+```text
+Grade B
+```
+
+## 2.4 Nested if Statement
+
+An `if` statement inside another `if` statement is called a nested if statement.
+
+### Syntax
+
+```java
+if (condition1) {
+    if (condition2) {
+        // Statements
+    }
+}
+```
+
+### Example
+
+```java
+class Main {
+    public static void main(String[] args) {
+        int age = 22;
+        boolean hasID = true;
+
+        if (age >= 18) {
+            if (hasID) {
+                System.out.println("Allowed");
+            }
+        }
+    }
+}
+```
+
+**Output:**
+```text
+Allowed
+```
+
+## 2.5 switch Statement
+
+The `switch` statement is used to execute one block of code from multiple alternatives based on a value.
+
+### Syntax
+
+```java
+switch (expression) {
+    case value1:
+        // Statements
+        break;
+
+    case value2:
+        // Statements
+        break;
+
+    default:
+        // Default statements
+}
+```
+
+### Example
+
+```java
+class Main {
+    public static void main(String[] args) {
+        int day = 2;
+
+        switch (day) {
+            case 1:
+                System.out.println("Monday");
+                break;
+
+            case 2:
+                System.out.println("Tuesday");
+                break;
+
+            case 3:
+                System.out.println("Wednesday");
+                break;
+
+            default:
+                System.out.println("Invalid Day");
+        }
+    }
+}
+```
+
+**Output:**
+```text
+Tuesday
+```
+
+**Note:** The `break` statement prevents execution from continuing into the next case. Without it, execution may fall through to subsequent cases.
+
+---
+
+# 3. Looping Statements
+
+Looping statements are used to execute a block of code repeatedly as long as a condition is satisfied.
+
+Java provides three basic looping statements.
+
+## 3.1 for Loop
+
+The `for` loop is generally used when the number of iterations is known.
+
+### Syntax
+
+```java
+for (initialization; condition; update) {
+    // Statements
+}
+```
+
+### Example
+
+```java
+class Main {
+    public static void main(String[] args) {
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(i);
+        }
+    }
+}
+```
+
+**Output:**
+```text
+1
+2
+3
+4
+5
+```
+
+## 3.2 while Loop
+
+The `while` loop executes a block of code as long as the condition is true.
+
+It checks the condition before executing the loop body.
+
+### Syntax
+
+```java
+while (condition) {
+    // Statements
+    // Update
+}
+```
+
+### Example
+
+```java
+class Main {
+    public static void main(String[] args) {
+        int i = 1;
+
+        while (i <= 5) {
+            System.out.println(i);
+            i++;
+        }
+    }
+}
+```
+
+**Output:**
+```text
+1
+2
+3
+4
+5
+```
+
+## 3.3 do-while Loop
+
+The `do-while` loop executes the statements at least once because the condition is checked after executing the loop body.
+
+### Syntax
+
+```java
+do {
+    // Statements
+} while (condition);
+```
+
+### Example
+
+```java
+class Main {
+    public static void main(String[] args) {
+        int i = 1;
+
+        do {
+            System.out.println(i);
+            i++;
+        } while (i <= 5);
+    }
+}
+```
+
+**Output:**
+```text
+1
+2
+3
+4
+5
+```
+
+### Difference Between for, while and do-while
+
+| for Loop | while Loop | do-while Loop |
+|---|---|---|
+| Entry-controlled | Entry-controlled | Exit-controlled |
+| Generally used when iterations are known | Used when iterations are not known in advance | Executes at least once |
+| Condition is checked before execution | Condition is checked before execution | Condition is checked after execution |
+
+---
+
+# 4. Jump Statements
+
+Jump statements transfer control from one part of a program to another.
+
+Java provides three commonly used jump statements.
+
+## 4.1 break Statement
+
+The `break` statement terminates the loop or switch statement immediately.
+
+### Syntax
+
+```java
+break;
+```
+
+### Example
+
+```java
+class Main {
+    public static void main(String[] args) {
+
+        for (int i = 1; i <= 5; i++) {
+
+            if (i == 3) {
+                break;
+            }
+
+            System.out.println(i);
+        }
+    }
+}
+```
+
+**Output:**
+```text
+1
+2
+```
+
+## 4.2 continue Statement
+
+The `continue` statement skips the current iteration and moves to the next iteration of the loop.
+
+### Syntax
+
+```java
+continue;
+```
+
+### Example
+
+```java
+class Main {
+    public static void main(String[] args) {
+
+        for (int i = 1; i <= 5; i++) {
+
+            if (i == 3) {
+                continue;
+            }
+
+            System.out.println(i);
+        }
+    }
+}
+```
+
+**Output:**
+```text
+1
+2
+4
+5
+```
+
+## 4.3 return Statement
+
+The `return` statement terminates the execution of a method. It can also return a value to the calling method.
+
+### Syntax
+
+```java
+return;
+```
+
+For a method that returns a value:
+
+```java
+return value;
+```
+
+### Example
+
+```java
+class Main {
+
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+
+        int result = add(10, 20);
+
+        System.out.println(result);
+    }
+}
+```
+
+**Output:**
+```text
+30
+```
+
+---
+
+# 5. Nested Loops
+
+A loop inside another loop is called a nested loop.
+
+### Syntax
+
+```java
+for (initialization; condition; update) {
+
+    for (initialization; condition; update) {
+        // Statements
+    }
+}
+```
+
+### Example
+
+```java
+class Main {
+    public static void main(String[] args) {
+
+        for (int i = 1; i <= 3; i++) {
+
+            for (int j = 1; j <= 3; j++) {
+                System.out.print("* ");
