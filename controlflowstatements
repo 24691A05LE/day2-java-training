@@ -1,0 +1,15 @@
+# day2-java-training
+control statements
+                       |
+      -------------------------------------
+      |                |                  |
+      conditional     looping            jumping
+      |                |                  |
+      |                |                  |
+      if               for                continue
+      if-else          while              break
+      else-if ladder   do while           return
+      nested if
+      switch
+
+      
